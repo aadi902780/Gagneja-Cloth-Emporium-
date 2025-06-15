@@ -34,11 +34,10 @@
     .fb-container {
       display: flex;
       justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
-    .button-container {
-      margin-top: 2rem;
-    }
-    .whatsapp-btn {
+    .whatsapp-btn, .buy-btn {
       background-color: #25D366;
       color: white;
       padding: 1rem 2rem;
@@ -48,11 +47,22 @@
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
+      margin-top: 1rem;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s ease;
     }
-    .whatsapp-btn:hover {
+    .whatsapp-btn:hover, .buy-btn:hover {
       background-color: #1ebe5c;
+    }
+    .input-box {
+      margin-top: 1rem;
+    }
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
@@ -62,7 +72,7 @@
   <script async defer crossorigin="anonymous" 
     src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0" 
     nonce="GAGNEJA"></script>  <!-- Facebook Feed Section -->  <div class="section">
-    <h2>🛍️ New Arrivals from Facebook</h2>
+    <h2>🛍️ न्यू प्रोडक्ट्स फेसबुक से</h2>
     <div class="fb-container">
       <div class="fb-page" 
            data-href="https://www.facebook.com/gagnejaclothemporium" 
@@ -77,10 +87,26 @@
                     class="fb-xfbml-parse-ignore">
           <a href="https://www.facebook.com/gagnejaclothemporium">Gagneja Cloth Emporium</a>
         </blockquote>
-      </div>
-    </div>
-  </div>  <!-- WhatsApp Contact Button -->  <div class="button-container">
-    <a class="whatsapp-btn" href="https://wa.me/919997111220" target="_blank">Chat with Us on WhatsApp</a>
+      </div><!-- WhatsApp Buy Button with User Input -->
+  <div class="input-box">
+    <input type="text" id="productInput" placeholder="आप कौन सा प्रोडक्ट खरीदना चाहते हैं?">
   </div>
-</body>
+  <button class="buy-btn" onclick="sendToWhatsApp()">📦 ख़रीदे</button>
+</div>
+
+  </div>  <!-- WhatsApp Contact Button -->  <div class="section">
+    <a class="whatsapp-btn" href="https://wa.me/919999999999" target="_blank">Chat with Us on WhatsApp</a>
+  </div>  <script>
+    function sendToWhatsApp() {
+      const input = document.getElementById('productInput').value.trim();
+      if (input === '') {
+        alert('कृपया कोई प्रोडक्ट नाम लिखें।');
+        return;
+      }
+      const number = '919999999999';
+      const message = `मैं यह प्रोडक्ट खरीदना चाहता हूँ: ${encodeURIComponent(input)}`;
+      const url = `https://wa.me/${number}?text=${message}`;
+      window.open(url, '_blank');
+    }
+  </script></body>
 </html>
