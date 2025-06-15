@@ -1,6 +1,4 @@
-<!-- shop.html -->
-<!DOCTYPE html>
-<html lang="en">
+<!-- shop.html --><!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,81 +31,53 @@
       margin: 2rem auto;
       max-width: 90%;
     }
-    .catalogue {
+    .fb-container {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
       justify-content: center;
+    }
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .button-container {
       margin-top: 2rem;
     }
-    .item {
-      background: #fff;
-      border-radius: 8px;
-      padding: 1rem;
-      width: 250px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    .item img {
-      max-width: 100%;
-      border-radius: 5px;
-    }
-    .item h3 {
-      margin: 0.5rem 0 0.3rem;
-      color: #333;
-    }
-    .item p {
-      font-size: 0.9rem;
-      color: #666;
-    }
-    .item button {
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background-color: black;
+    .whatsapp-btn {
+      background-color: #25D366;
       color: white;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
       border: none;
-      border-radius: 4px;
+      border-radius: 50px;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
     }
-    .item button:hover {
-      background-color: #222;
+    .whatsapp-btn:hover {
+      background-color: #1ebe5c;
     }
   </style>
 </head>
 <body>
   <!-- Logo -->
-  <img src="https://i.ibb.co/YFmt3770/1000001378-removebg-preview.png" alt="Gagneja Cloth Emporium Logo" class="logo">
-
-  <!-- Facebook Feed Embed -->
-  <div class="section">
-    <h2>Follow us on Facebook</h2>
-    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgagnejacloth&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-  </div>
-
-  <!-- Catalogue Section -->
-  <div class="section">
-    <h2>Catalogue</h2>
-    <div class="catalogue">
-      <div class="item">
-        <img src="https://via.placeholder.com/250x300?text=Saree+1" alt="Saree 1">
-        <h3>Saree Elegant</h3>
-        <p>₹1,499</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="item">
-        <img src="https://via.placeholder.com/250x300?text=Kurti+1" alt="Kurti 1">
-        <h3>Designer Kurti</h3>
-        <p>₹799</p>
-        <button>Add to Cart</button>
-      </div>
-      <div class="item">
-        <img src="https://via.placeholder.com/250x300?text=Suit+1" alt="Suit 1">
-        <h3>Punjabi Suit</h3>
-        <p>₹1,899</p>
-        <button>Add to Cart</button>
-      </div>
+  <img src="https://i.ibb.co/YFmt3770/1000001378-removebg-preview.png" alt="Gagneja Cloth Emporium Logo" class="logo">  <!-- Facebook Feed Section -->  <div class="section">
+    <h2>🛍️ New Arrivals from Facebook</h2>
+    <div class="fb-container">
+      <iframe 
+        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fgagnejacloth&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+        width="500"
+        height="700"
+        style="border:none;overflow:hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+      </iframe>
     </div>
+  </div>  <!-- WhatsApp Contact Button -->  <div class="button-container">
+    <a class="whatsapp-btn" href="https://wa.me/919999999999" target="_blank">Chat with Us on WhatsApp</a>
   </div>
 </body>
 </html>
-
-
